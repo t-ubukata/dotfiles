@@ -1,3 +1,12 @@
 [submodule ".vim/pack/mypackage/start/ale"]
 	path = .vim/pack/mypackage/start/ale
 	url = https://github.com/w0rp/ale
+[submodule ".vim/pack/mypackage/start/gtags.vim"]
+	path = .vim/pack/mypackage/start/gtags.vim
+	url = https://github.com/vim-scripts/gtags.vim
+[submodule ".vim/pack/mypackage/start/a.vim"]
+	path = .vim/pack/mypackage/start/a.vim
+	url = https://github.com/vim-scripts/a.vim
+[submodule ".vim/pack/mypackage/start/tcomment_vim"]
+	path = .vim/pack/mypackage/start/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim

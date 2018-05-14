@@ -26,6 +26,8 @@ set clipboard+=unnamed
 set ignorecase
 " case sensitive when including upper and lower cases
 set smartcase
+" hilighting search
+set hlsearch
 " incremental search
 set incsearch
 " command history
@@ -34,7 +36,7 @@ set history=100
 set ttimeout
 " time out length (ms)
 set ttimeoutlen=100
-" do not incliment and decliment octal
+" not incliment and decliment octal
 set nrformats-=octal
 " screen setting
 set number
@@ -57,10 +59,34 @@ set cursorline
 " statusline
 let ff_table = {'dos' : 'CRLF', 'unix' : 'LF', 'mac' : 'CR' }
 let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %P'
-" do not make back up file
+" not make back up file
 set nobackup
-" do not make undo file
+" not make undo file
 set noundofile
-" do not make swap file
+" not make swap file
 set noswapfile
 
+" key bind
+
+" <C-Space> to switch to normal mode
+" <C-Space> is mapped to <nul>
+noremap <Nul> <Esc>
+noremap! <Nul> <Esc>
+
+" not replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
+" gtags.vim
+noremap <Space>g :Gtags
+noremap <Space>h :Gtags -f %<CR>
+noremap <Space>j :GtagsCursor<CR>
+noremap <Space>n :cn<CR>
+noremap <Space>p :cp<CR>

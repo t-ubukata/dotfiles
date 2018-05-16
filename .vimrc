@@ -1,5 +1,6 @@
-" internal encoding
 scriptencoding utf-8
+" internal encoding
+set encoding=utf-8
 " detect Japanese encoding
 set fileencodings=utf-8,utf-16,utf-16le,cp932,sjis,iso-2022-jp,euc-jp,latin1,utf-8
 " not compatible with vi
@@ -65,6 +66,8 @@ set nobackup
 set noundofile
 " not make swap file
 set noswapfile
+" change current directory to the directory where the file exists
+set autochdir
 
 " key bind
 

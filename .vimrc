@@ -59,7 +59,7 @@ set title
 set cursorline
 " statusline
 let ff_table = {'dos' : 'CRLF', 'unix' : 'LF', 'mac' : 'CR' }
-let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %P'
+let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %p%%'
 " not make back up file
 set nobackup
 " not make undo file

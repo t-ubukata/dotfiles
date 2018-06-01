@@ -57,9 +57,6 @@ set showcmd
 set title
 " hilight cursorline
 set cursorline
-" statusline
-let ff_table = {'dos' : 'CRLF', 'unix' : 'LF', 'mac' : 'CR' }
-let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %p%%'
 " not make back up file
 set nobackup
 " not make undo file
@@ -68,6 +65,11 @@ set noundofile
 set noswapfile
 " change current directory to the directory where the file exists
 set autochdir
+" set path current directory
+set path+=.,
+" statusline
+let ff_table = {'dos' : 'CRLF', 'unix' : 'LF', 'mac' : 'CR' }
+let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %p%%'
 
 " key bind
 

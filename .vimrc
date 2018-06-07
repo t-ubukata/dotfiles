@@ -63,8 +63,6 @@ set nobackup
 set noundofile
 " not make swap file
 set noswapfile
-" change current directory to the directory where the file exists
-set autochdir
 " set path current directory
 set path+=.,
 " statusline

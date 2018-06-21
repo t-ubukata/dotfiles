@@ -73,7 +73,6 @@ let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[H
 
 " <C-Space> to switch to normal mode
 " <C-Space> is mapped to <nul>
-noremap <Nul> <Esc>
 noremap! <Nul> <Esc>
 
 " not replace paste buffer
@@ -88,7 +87,6 @@ endfunction
 vmap <silent> <expr> p <sid>Repl()
 
 " gtags.vim
-noremap <Space>g :Gtags
 noremap <Space>h :Gtags -f %<CR>
 noremap <Space>j :GtagsCursor<CR>
 noremap <Space>n :cn<CR>

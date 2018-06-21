@@ -75,6 +75,9 @@ let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[H
 " <C-Space> is mapped to <nul>
 noremap! <Nul> <Esc>
 
+ " gr to switch to left tab
+ nnoremap gr gT
+
 " not replace paste buffer
 function! RestoreRegister()
   let @" = s:restore_reg

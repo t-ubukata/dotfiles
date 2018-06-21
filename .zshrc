@@ -4,7 +4,7 @@ SAVEHIST=1000
 
 bindkey -e
 
-zstyle :compinstall filename '/Users/admin/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit

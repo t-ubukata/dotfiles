@@ -1,4 +1,8 @@
 scriptencoding utf-8
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" general
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " internal encoding
 set encoding=utf-8
 " detect Japanese encoding
@@ -63,20 +67,20 @@ set nobackup
 set noundofile
 " not make swap file
 set noswapfile
-" set path current directory
-set path+=.,
 " statusline
 let ff_table = {'dos' : 'CRLF', 'unix' : 'LF', 'mac' : 'CR' }
 let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %p%%'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " key bind
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " <C-Space> to switch to normal mode
 " <C-Space> is mapped to <nul>
 noremap! <Nul> <Esc>
 
- " gr to switch to left tab
- nnoremap gr gT
+" gr to switch to left tab
+nnoremap gr gT
 
 " not replace paste buffer
 function! RestoreRegister()
@@ -89,8 +93,16 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " gtags.vim
 noremap <Space>h :Gtags -f %<CR>
 noremap <Space>j :GtagsCursor<CR>
 noremap <Space>n :cn<CR>
 noremap <Space>p :cp<CR>
+
+" gen_tags.vim
+let g:gen_tags#gtags_auto_gen = 1
+let g:gen_tags#use_cache_dir = 0

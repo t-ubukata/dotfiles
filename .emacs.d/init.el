@@ -25,6 +25,11 @@
 ;; scroll down 1 line
 (global-set-key "\M-p" (lambda () (interactive) (scroll-down 1)))
 
+;; Scheme mode
+(setq scheme-program-name "gosh -i")
+(autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
+(autoload 'run-scheme "cmuscheme" "Run an inferior Scheme process." t)
+
 ;; others
 (setq inhibit-startup-message t)
 (setq make-backup-files nil)
@@ -36,4 +41,3 @@
 (require 'dired-x)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq ring-bell-function 'ignore)
-

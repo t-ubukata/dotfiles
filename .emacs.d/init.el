@@ -5,15 +5,18 @@
 (setq default-buffer-file-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
-;; show number
-(column-number-mode t)
+;; show line numbers
+(global-linum-mode)
+;; show space after line numbers
+(setq linum-format "%d ")
 ;; hilight cuosor line
 (global-hl-line-mode t)
 ;; hilight corresponding parenthesis
 (show-paren-mode 1)
-;; show line number
+;; show line numbers on mode line
 (line-number-mode 1)
-(global-linum-mode)
+;; show column numbers on mode line
+(column-number-mode t)
 ;; C-k to delete whole line
 (setq kill-whole-line t)
 ;; do not wrap on normal window

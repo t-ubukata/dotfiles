@@ -106,3 +106,6 @@ noremap <Space>p :cp<CR>
 " gen_tags.vim
 let g:gen_tags#gtags_auto_gen = 1
 let g:gen_tags#use_cache_dir = 0
+
+" NERDTree
+let NERDTreeShowHidden=1

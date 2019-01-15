@@ -5,8 +5,8 @@ scriptencoding utf-8
 
 " internal encoding
 set encoding=utf-8
-" detect Japanese encoding
-set fileencodings=utf-8,utf-16,utf-16le,cp932,sjis,iso-2022-jp,euc-jp,latin1,utf-8
+" file encoding
+set fileencoding=utf-8
 " not compatible with vi
 set nocompatible
 " tab width

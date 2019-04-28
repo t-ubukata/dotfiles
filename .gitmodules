@@ -4,9 +4,6 @@
 [submodule ".vim/pack/mypackage/start/gtags.vim"]
 	path = .vim/pack/mypackage/start/gtags.vim
 	url = https://github.com/vim-scripts/gtags.vim
-[submodule ".vim/pack/mypackage/start/a.vim"]
-	path = .vim/pack/mypackage/start/a.vim
-	url = https://github.com/vim-scripts/a.vim
 [submodule ".vim/pack/mypackage/start/tcomment_vim"]
 	path = .vim/pack/mypackage/start/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim
@@ -19,3 +16,6 @@
 [submodule ".vim/pack/mypackage/start/gen_tags.vim"]
 	path = .vim/pack/mypackage/start/gen_tags.vim
 	url = https://github.com/jsfaint/gen_tags.vim
+[submodule ".vim/pack/mypackage/start/indentLine"]
+	path = .vim/pack/mypackage/start/indentLine
+	url = https://github.com/Yggdroot/indentLine

@@ -10,7 +10,7 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 
-PROMPT=$
+PROMPT=%#
 
 stty stop undef
 stty start undef

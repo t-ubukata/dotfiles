@@ -117,3 +117,6 @@ let g:gen_tags#use_cache_dir = 0
 let NERDTreeShowHidden=1
 let g:NERDTreeLimitedSyntax = 1
 let g:NERDTreeSortOrder = []
+
+" vim-json
+let g:vim_json_syntax_conceal = 0

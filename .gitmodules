@@ -19,3 +19,6 @@
 [submodule ".vim/pack/mypackage/start/indentLine"]
 	path = .vim/pack/mypackage/start/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule ".vim/pack/mypackage/start/vim-json"]
+	path = .vim/pack/mypackage/start/vim-json
+	url = https://github.com/elzr/vim-json

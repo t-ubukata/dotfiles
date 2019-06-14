@@ -13,6 +13,7 @@ autoload -Uz compinit
 compinit
 setopt auto_pushd
 setopt pushd_ignore_dups
+setopt nonomatch
 
 PROMPT=%#
 

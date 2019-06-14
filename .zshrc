@@ -1,6 +1,5 @@
 export LESSCHARSET=utf-8
 export DEBIAN_FRONTEND=noninteractive
-export PYLINTRC=~/.config/pylintrc
 
 HISTFILE=~/.histfile
 HISTSIZE=10000

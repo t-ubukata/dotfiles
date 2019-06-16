@@ -20,7 +20,6 @@ PROMPT=%#
 stty stop undef
 stty start undef
 
-alias l='ls -ahlF --color=auto'
 alias grep='grep --color=auto'
 alias diff='colordiff'
 alias py='python3'
@@ -34,3 +33,12 @@ alias gpl='git pull'
 alias gps='git push'
 alias gl='git log'
 alias gdb="gdb -q"
+
+case "$OSTYPE" in
+darwin*)
+  alias l='ls -ahlFG'
+  ;;
+linux*)
+  alias l='ls -ahlF --color=auto'
+  ;;
+esac

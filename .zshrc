@@ -32,7 +32,7 @@ alias gcm='git commit'
 alias gpl='git pull'
 alias gps='git push'
 alias gl='git log'
-alias gdb="gdb -q"
+alias gdb="gdb -q --args"
 
 case "$OSTYPE" in
 darwin*)

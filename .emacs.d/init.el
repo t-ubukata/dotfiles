@@ -30,7 +30,6 @@
 ;; use C-h as backward deletion
 (keyboard-translate ?\C-h ?\C-?)
 
-
 ;; Scheme mode
 (setq scheme-program-name "gosh -i")
 (autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)

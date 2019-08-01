@@ -27,6 +27,9 @@
 (global-set-key "\M-n" (lambda () (interactive) (scroll-up 1)))
 ;; scroll down 1 line
 (global-set-key "\M-p" (lambda () (interactive) (scroll-down 1)))
+;; use C-h as backward deletion
+(keyboard-translate ?\C-h ?\C-?)
+
 
 ;; Scheme mode
 (setq scheme-program-name "gosh -i")

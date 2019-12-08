@@ -7,9 +7,6 @@
 [submodule ".vim/pack/mypackage/start/tcomment_vim"]
 	path = .vim/pack/mypackage/start/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim
-[submodule ".vim/pack/mypackage/start/vim-fswitch"]
-	path = .vim/pack/mypackage/start/vim-fswitch
-	url = https://github.com/t-ubukata/vim-fswitch
 [submodule ".vim/pack/mypackage/start/nerdtree"]
 	path = .vim/pack/mypackage/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree
@@ -22,3 +19,6 @@
 [submodule ".vim/pack/mypackage/start/vim-json"]
 	path = .vim/pack/mypackage/start/vim-json
 	url = https://github.com/elzr/vim-json
+[submodule ".vim/pack/mypackage/start/vim-fswitch"]
+	path = .vim/pack/mypackage/start/vim-fswitch
+	url = https://github.com/t-ubukata/vim-fswitch

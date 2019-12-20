@@ -38,6 +38,7 @@
 ;; others
 (setq inhibit-startup-message t)
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 (setq delete-auto-save-files t)
 (setq-default tab-width 2 indent-tabs-mode nil)
 (setq eol-mnemonic-dos "(CRLF)")

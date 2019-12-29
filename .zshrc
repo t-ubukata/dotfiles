@@ -1,5 +1,7 @@
 export LESSCHARSET=utf-8
 export DEBIAN_FRONTEND=noninteractive
+export LC_ALL=C
+export LANG=C
 
 HISTFILE=~/.histfile
 HISTSIZE=10000

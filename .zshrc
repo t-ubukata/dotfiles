@@ -1,11 +1,8 @@
 export LESSCHARSET=utf-8
-export DEBIAN_FRONTEND=noninteractive
-export LC_ALL=C
-export LANG=C
 
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 bindkey -e
 zstyle :compinstall filename
@@ -38,9 +35,14 @@ alias gdb="gdb -q"
 
 case "$OSTYPE" in
 darwin*)
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
   alias l='ls -ahlFG'
   ;;
 linux*)
+  export LC_ALL=C.UTF-8
+  export LANG=en_C.UTF-8
+  export DEBIAN_FRONTEND=noninteractive
   alias l='ls -ahlF --color=auto'
   ;;
 esac

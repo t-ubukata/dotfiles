@@ -19,3 +19,6 @@
 [submodule ".vim/pack/mypackage/start/vim-fswitch"]
 	path = .vim/pack/mypackage/start/vim-fswitch
 	url = https://github.com/t-ubukata/vim-fswitch
+[submodule ".vim/pack/mypackage/start/vim-bracketed-paste"]
+	path = .vim/pack/mypackage/start/vim-bracketed-paste
+	url = https://github.com/ConradIrwin/vim-bracketed-paste.git

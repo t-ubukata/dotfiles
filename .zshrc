@@ -13,6 +13,7 @@ compinit
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt nonomatch
+unsetopt promptcr
 
 PROMPT=%#
 

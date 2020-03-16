@@ -1,94 +1,89 @@
 scriptencoding utf-8
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" general
+" General.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" internal encoding
-set encoding=utf-8
-" file encoding
-set fileencoding=utf-8
-" not compatible with vi
-set nocompatible
-" tab width
-set tabstop=2
-" auto indent
-set autoindent
-" auto indent tab width
-set shiftwidth=2
-" expand tab to space
-set expandtab
-" not expand tab to space when editing makefile
-autocmd FileType make setlocal noexpandtab
-" press backspace to delete indent, eol, characters left of curosr
-set backspace=indent,eol,start
-" research again from head
-set wrapscan
-" command line extended mode
-set wildmenu
-" yank to clipboard
-set clipboard+=unnamed
-" ignore case to search
-set ignorecase
-" case sensitive when including upper and lower cases
-set smartcase
-" hilighting search
-set hlsearch
-" incremental search
-set incsearch
-" command history
-set history=100
-" key code time out
-set ttimeout
-" time out length (ms)
-set ttimeoutlen=100
-" not incliment and decliment octal
-set nrformats-=octal
-" screen setting
+" Screen settings.
 set number
 set ruler
 syntax on
-" show tab, trailing whitespace, eol
-set list
-" replace tab, extends, trailing whitespace, non-breaking space with
-set listchars=tab:>-,extends:<,trail:.,nbsp:.
-" wrap off
 set nowrap
-" always show status line
-set laststatus=2
-" show command
 set showcmd
-" show title
 set title
-" hilight cursorline
 set cursorline
-" not make back up file
+" Internal encoding.
+set encoding=utf-8
+" File encoding.
+set fileencoding=utf-8
+" No compatible with vi.
+set nocompatible
+" Tab width.
+set tabstop=2
+" Auto indent.
+set autoindent
+" Auto indent tab width.
+set shiftwidth=2
+" Expand tab to space.
+set expandtab
+" Not expand tab to space when editing makefile.
+autocmd FileType make setlocal noexpandtab
+" Press backspace to delete indent, eol, characters left of curosr.
+set backspace=indent,eol,start
+" Research again from head.
+set wrapscan
+" Command line extended mode.
+set wildmenu
+" Yank to the clipboard.
+set clipboard+=unnamed
+" Ignore case to search.
+set ignorecase
+" Search case-sensitively when including upper and lower cases.
+set smartcase
+" Hilight search.
+set hlsearch
+" Incremental search.
+set incsearch
+" Command history.
+set history=10000
+" Key code time out.
+set ttimeout
+" Time out length (ms).
+set ttimeoutlen=100
+" Not incliment and decliment octal.
+set nrformats-=octal
+" show tab, trailing whitespace, eol.
+set list
+" Replace tab, extends, trailing whitespace, non-breaking space.
+set listchars=tab:>-,extends:<,trail:.,nbsp:.
+" Always show status line.
+set laststatus=2
+" Not make back up file.
 set nobackup
-" not make undo file
+" Not make undo file.
 set noundofile
-" not make swap file
+" Not make swap file.
 set noswapfile
-" not warn when changing buffer
+" Not warn when changing buffer.
 set hidden
-" statusline
+" Disable concealing.
+set conceallevel=0
+" Status line.
 let ff_table = {'dos' : 'CRLF', 'unix' : 'LF', 'mac' : 'CR' }
 let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %p%%'
-" disable concealing
-set conceallevel=0
-let g:vim_json_syntax_conceal = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" key bind
+" Key bindings.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" <C-Space> to switch to normal mode
-" <C-Space> is mapped to <nul>
-noremap <Nul> <Esc>
-noremap! <Nul> <Esc>
+" Go back to normal mode.
+noremap <C-j> <Esc>
+noremap! <C-j> <Esc>
 
-" gr to switch to left tab
+" gr to switch to the left tab.
 nnoremap gr gT
 
-" not replace paste buffer
+" Not replace the paste buffer.
 function! RestoreRegister()
   let @" = s:restore_reg
   return ''
@@ -100,7 +95,7 @@ endfunction
 vmap <silent> <expr> p <sid>Repl()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" plugins
+" Plugins.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " gtags.vim

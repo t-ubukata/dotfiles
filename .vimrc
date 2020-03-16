@@ -77,8 +77,9 @@ let &statusline = '%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Go back to normal mode.
-noremap <C-j> <Esc>
-noremap! <C-j> <Esc>
+" <C-Space> is mapped to <nul>.
+noremap <Nul> <Esc>
+noremap! <Nul> <Esc>
 
 " gr to switch to the left tab.
 nnoremap gr gT

@@ -70,7 +70,7 @@ set hidden
 set conceallevel=0
 " Status line.
 let ff_table = {'dos' : 'CRLF', 'unix' : 'LF', 'mac' : 'CR' }
-let &statusline='%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %p%%'
+let &statusline = '%<%f %h%m%r%w[%{(&fenc!=""?&fenc:&enc)}:%{ff_table[&ff]}]%y%=[HEX=%02.2B]%-14.(%l,%c%V%) %p%%'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings.
@@ -109,7 +109,7 @@ let g:gen_tags#gtags_auto_gen = 1
 let g:gen_tags#use_cache_dir = 0
 
 " NERDTree
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
 let g:NERDTreeLimitedSyntax = 1
 let g:NERDTreeSortOrder = []
 

@@ -2,7 +2,7 @@ export LESSCHARSET=utf-8
 export GOROOT=/usr/local/go
 export GOPATH="$HOME"/.go
 export PATH="$GOPATH"/bin:"$GOROOT"/bin:"$PATH"
-export PATH="$HOME"/.local/bin
+export PATH="$HOME"/.local/bin:"$PATH"
 
 HISTFILE=~/.histfile
 HISTSIZE=100000

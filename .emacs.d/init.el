@@ -29,6 +29,8 @@
 (global-set-key "\M-p" (lambda () (interactive) (scroll-down 1)))
 ;; use C-h as backward deletion
 (keyboard-translate ?\C-h ?\C-?)
+;; disable electric indent mode
+(when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
 
 ;; Scheme mode
 (setq scheme-program-name "gosh -i")

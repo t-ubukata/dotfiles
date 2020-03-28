@@ -22,3 +22,6 @@
 [submodule ".vim/pack/mypackage/start/vim-bracketed-paste"]
 	path = .vim/pack/mypackage/start/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste.git
+[submodule ".vim/pack/mypackage/start/vim-gitgutter"]
+	path = .vim/pack/mypackage/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

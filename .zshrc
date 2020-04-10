@@ -47,7 +47,7 @@ darwin*)
   ;;
 linux*)
   export LC_ALL=C.UTF-8
-  export LANG=en_C.UTF-8
+  export LANG=C.UTF-8
   export DEBIAN_FRONTEND=noninteractive
   alias l='ls -ahlF --color=auto'
   ;;

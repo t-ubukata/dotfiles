@@ -37,3 +37,6 @@
 [submodule ".vim/pack/mypackage/start/fzf"]
 	path = .vim/pack/mypackage/start/fzf
 	url = https://github.com/junegunn/fzf
+[submodule ".vim/pack/mypackage/start/fzf.vim"]
+	path = .vim/pack/mypackage/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim

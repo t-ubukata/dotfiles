@@ -73,3 +73,5 @@ linux*)
   alias l='ls -ahlF --color=auto'
   ;;
 esac
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

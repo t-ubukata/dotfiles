@@ -117,3 +117,6 @@ let g:airline_section_y = '%{(&fenc!=""?&fenc:&enc)}[%{nl[&ff]}]'
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+" vim-airline-themes
+let g:airline_theme = 'solarized'

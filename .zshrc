@@ -1,9 +1,10 @@
-export LESSCHARSET=utf-8
 export GOROOT=/usr/local/go
 export GOPATH="$HOME"/.go
 export PATH="$GOPATH"/bin:"$GOROOT"/bin:"$PATH"
 export PATH="$HOME"/.cargo/bin:"$PATH"
 export PATH="$HOME"/.local/bin:"$PATH"
+export LESSCHARSET=utf-8
+export FZF_DEFAULT_COMMAND=fd
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000

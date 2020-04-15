@@ -120,3 +120,4 @@ let g:vim_json_syntax_conceal = 0
 
 " vim-airline-themes
 let g:airline_theme = 'solarized'
+let g:airline_solarized_bg = 'dark'

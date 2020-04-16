@@ -1,43 +1,33 @@
-;; encoding
+;; Encoding.
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
-;; show line numbers
+;; Shows line numbers.
 (global-linum-mode)
-;; show space after line numbers
+;; Shows a space after each line number.
 (setq linum-format "%d ")
-;; hilight cuosor line
+;; Hilights the cursor line.
 (global-hl-line-mode t)
-;; hilight corresponding parenthesis
+;; Hilights corresponding parenthesis.
 (show-paren-mode 1)
-;; show line numbers on mode line
+;; Shows the line number on the mode line.
 (line-number-mode 1)
-;; show column numbers on mode line
+;; Shows the column number on the mode line.
 (column-number-mode t)
-;; C-k to delete whole line
+;; C-k to delete whole line.
 (setq kill-whole-line t)
-;; do not wrap on normal window
+;; Not wrap in a normal window.
 (setq-default truncate-lines t)
-;; do not wrap in splitted windows
+;; Not wrap in a splitted window.
 (setq-default truncate-partial-width-windows t)
-;; scroll up 1 line
-(global-set-key "\M-n" (lambda () (interactive) (scroll-up 1)))
-;; scroll down 1 line
-(global-set-key "\M-p" (lambda () (interactive) (scroll-down 1)))
-;; use C-h as backward deletion
-(keyboard-translate ?\C-h ?\C-?)
-;; disable electric indent mode
+;; Disables electric indent mode
 (when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
-
-;; Scheme mode
+;; Scheme program name.
 (setq scheme-program-name "gosh -i")
-(autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
-(autoload 'run-scheme "cmuscheme" "Run an inferior Scheme process." t)
-
-;; others
+;; Misc.
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
 (setq make-backup-files nil)
@@ -51,7 +41,15 @@
 (setq ring-bell-function 'ignore)
 (menu-bar-mode -1)
 
-;; packages
+;; Key bindings.
+;; Scrolls up 1 line.
+(global-set-key "\M-n" (lambda () (interactive) (scroll-up 1)))
+;; Scrolls down 1 line.
+(global-set-key "\M-p" (lambda () (interactive) (scroll-down 1)))
+;; C-h to delete backward.
+(keyboard-translate ?\C-h ?\C-?)
+
+;; Packages.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -60,5 +58,3 @@
   (package-install 'use-package))
 (eval-when-compile
   (require 'use-package))
-(use-package dired-x)
-

@@ -4,6 +4,9 @@ export PATH="$GOPATH"/bin:"$GOROOT"/bin:"$PATH"
 export PATH="$HOME"/.cargo/bin:"$PATH"
 export PATH="$HOME"/.local/bin:"$PATH"
 export LESSCHARSET=utf-8
+export VISUAL=vi
+export EDITOR=vi
+export LESSEDIT="vi %f"
 export FZF_DEFAULT_COMMAND=fd
 
 HISTFILE=~/.zsh_history
@@ -48,8 +51,10 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 alias grep='grep --color=auto'
+alias gr='grep -RIn --color=auto'
 alias diff='colordiff'
 alias py='python3'
+alias tm='tmux -2u'
 alias gs='git status'
 alias gb='git branch'
 alias gco='git checkout'

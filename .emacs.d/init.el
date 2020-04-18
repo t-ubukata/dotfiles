@@ -27,6 +27,10 @@
 (when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
 ;; Scheme program name.
 (setq scheme-program-name "gosh -i")
+;; Separates Custom.
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
 ;; Misc.
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
@@ -50,6 +54,7 @@
 (keyboard-translate ?\C-h ?\C-?)
 
 ;; Packages.
+(setq package-check-signature nil)
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -58,3 +63,8 @@
   (package-install 'use-package))
 (eval-when-compile
   (require 'use-package))
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))

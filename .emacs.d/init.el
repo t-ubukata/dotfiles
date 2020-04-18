@@ -54,8 +54,8 @@
 (keyboard-translate ?\C-h ?\C-?)
 
 ;; Packages.
-(setq package-check-signature nil)
 (require 'package)
+(setq package-check-signature nil)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (unless (package-installed-p 'use-package)
@@ -65,6 +65,27 @@
   (require 'use-package))
 (use-package rainbow-delimiters
   :ensure t
+  :defer t
   :init
-  (progn
-    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+  :config
+(use-package undo-tree
+  :ensure t
+  :defer t
+  :init
+  (global-undo-tree-mode t)
+  (global-set-key (kbd "M-/") 'undo-tree-redo))
+  :config
+(use-package neotree
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'window-setup-hook #'neotree-toggle)
+  :config
+  (setq neo-show-hidden-files t))
+(use-package easy-kill
+  :ensure t
+  :defer t
+  :init
+  (global-set-key [remap kill-ring-save] 'easy-kill))
+

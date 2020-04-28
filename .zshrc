@@ -37,7 +37,6 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -71,13 +70,23 @@ darwin*)
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
   alias l='ls -ahlFG'
+  if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+    export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+  fi
+  [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+  source "/usr/local/opt/fzf/shell/key-bindings.zsh"
   ;;
 linux*)
   export LC_ALL=C.UTF-8
   export LANG=C.UTF-8
   export DEBIAN_FRONTEND=noninteractive
   alias l='ls -ahlF --color=auto'
+  eval "$(dircolors -b)"
+  if [[ ! "$PATH" == */home/ubukata/project/dotfiles/.vim/pack/mypackage/start/fzf/bin* ]]; then
+    export PATH="${PATH:+${PATH}:}$HOME/.vim/pack/mypackage/start/fzf/bin"
+  fi
+  [[ $- == *i* ]] && source "$HOME/.vim/pack/mypackage/start/fzf/shell/completion.zsh" 2> /dev/null
+  source "$HOME/.vim/pack/mypackage/start/fzf/shell/key-bindings.zsh"
   ;;
 esac
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

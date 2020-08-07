@@ -79,8 +79,6 @@
 (use-package neotree
   :ensure t
   :defer t
-  :init
-  (add-hook 'window-setup-hook #'neotree-toggle)
   :config
   (setq neo-show-hidden-files t))
 (use-package easy-kill

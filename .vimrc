@@ -16,6 +16,8 @@ set cursorline
 set encoding=utf-8
 " File encoding.
 set fileencoding=utf-8
+" File encodings to try form left to right.
+set fileencodings=utf-8,cp932,sjis,iso-2022-jp,euc-jp
 " No compatible with vi.
 set nocompatible
 " Tab width.
@@ -68,6 +70,8 @@ set noswapfile
 set hidden
 " Disable concealing.
 set conceallevel=0
+" Disable modeline.
+set nomodeline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings.

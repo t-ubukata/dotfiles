@@ -1,8 +1,6 @@
-export GOROOT=/usr/local/go
-export GOPATH="$HOME"/.go
-export PATH="$GOPATH"/bin:"$GOROOT"/bin:"$PATH"
-export PATH="$HOME"/.cargo/bin:"$PATH"
-export PATH="$HOME"/.local/bin:"$PATH"
+if [[ ! "$PATH" == *"$HOME"/.local/bin* ]]; then
+  export PATH="$HOME/.local/bin${PATH:+:${PATH}}"
+fi
 export LESSCHARSET=utf-8
 export VISUAL=vi
 export EDITOR=vi
@@ -51,7 +49,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 alias grep='grep --color=auto'
 alias gr='grep -RIn --color=auto'
-alias diff='colordiff'
 alias py='python3'
 alias tm='tmux -2u'
 alias gs='git status'
@@ -60,6 +57,7 @@ alias gco='git checkout'
 alias gd='git diff'
 alias ga='git add'
 alias gcm='git commit'
+alias gf='git fetch'
 alias gpl='git pull'
 alias gps='git push'
 alias gl='git log'
@@ -67,24 +65,27 @@ alias gdb="gdb -q"
 
 case "$OSTYPE" in
 darwin*)
-  export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
   alias l='ls -ahlFG'
+  # For fzf-tmux
   if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
     export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
   fi
+  # Source iff interactive 
   [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
   source "/usr/local/opt/fzf/shell/key-bindings.zsh"
   ;;
 linux*)
-  export LC_ALL=C.UTF-8
   export LANG=C.UTF-8
   export DEBIAN_FRONTEND=noninteractive
   alias l='ls -ahlF --color=auto'
+  alias fd='fdfind'
   eval "$(dircolors -b)"
-  if [[ ! "$PATH" == */home/ubukata/project/dotfiles/.vim/pack/mypackage/start/fzf/bin* ]]; then
+  # For fzf-tmux
+  if [[ ! "$PATH" == *"$HOME"/project/dotfiles/.vim/pack/mypackage/start/fzf/bin* ]]; then
     export PATH="${PATH:+${PATH}:}$HOME/.vim/pack/mypackage/start/fzf/bin"
   fi
+  # Source iff interactive 
   [[ $- == *i* ]] && source "$HOME/.vim/pack/mypackage/start/fzf/shell/completion.zsh" 2> /dev/null
   source "$HOME/.vim/pack/mypackage/start/fzf/shell/key-bindings.zsh"
   ;;

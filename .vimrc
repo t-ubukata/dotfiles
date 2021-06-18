@@ -26,21 +26,21 @@ set tabstop=2
 set autoindent
 " Auto indent tab width.
 set shiftwidth=2
-" Expand tab to space.
+" Expands tab to space.
 set expandtab
-" Not expand tab to space when editing makefile.
+" No expand tab to space in Makefile.
 autocmd FileType make setlocal noexpandtab
-" Press backspace to delete indent, eol, characters left of curosr.
+" Bckspace to delete indent, eol, characters left of curosr.
 set backspace=indent,eol,start
-" Research again from head.
+" Wrap search
 set wrapscan
 " Command line extended mode.
 set wildmenu
-" Yank to the clipboard.
+" Yanks to clipboard.
 set clipboard+=unnamed
-" Ignore case to search.
+" Ignores case to search.
 set ignorecase
-" Search case-sensitively when including upper and lower cases.
+" Searchs case-sensitively when including upper and lower cases.
 set smartcase
 " Hilight search.
 set hlsearch
@@ -52,40 +52,47 @@ set history=10000
 set ttimeout
 " Time out length (ms).
 set ttimeoutlen=100
-" Not incliment and decliment octal.
+" No incliment and decliment octal.
 set nrformats-=octal
-" show tab, trailing whitespace, eol.
+" Shows tab, trailing whitespace, eol.
 set list
-" Replace tab, extends, trailing whitespace, non-breaking space.
+" Replaces tab, extends, trailing whitespace, non-breaking space.
 set listchars=tab:>-,extends:<,trail:.,nbsp:.
-" Always show status line.
+" Always shows status line.
 set laststatus=2
-" Not make back up file.
+" No back up file.
 set nobackup
-" Not make undo file.
+" No undo file.
 set noundofile
-" Not make swap file.
+" No swap file.
 set noswapfile
-" Not warn when changing buffer.
+" No warn when changing buffer.
 set hidden
-" Disable concealing.
+" No concealing.
 set conceallevel=0
-" Disable modeline.
+" No modeline.
 set nomodeline
+" No bell.
+set belloff=all
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Go back to normal mode.
-" <C-Space> is mapped to <nul>.
-noremap <Nul> <Esc>
-noremap! <Nul> <Esc>
+" <C-Space> to Return to normal mode.
+if has('win64')
+  noremap <C-Space> <Esc>
+  noremap! <C-Space> <Esc>
+else
+  " <C-Space> sends <Nul> in Unix terminal.
+  noremap <Nul> <Esc>
+  noremap! <Nul> <Esc>
+endif
 
 " gr to switch to the left tab.
 nnoremap gr gT
 
-" Not replace the paste buffer.
+" No register replace when pasting 
 function! RestoreRegister()
   let @" = s:restore_reg
   return ''
@@ -112,16 +119,15 @@ let g:gen_tags#use_cache_dir = 0
 
 " NERDTree
 let NERDTreeShowHidden = 1
-let g:NERDTreeLimitedSyntax = 1
 let g:NERDTreeSortOrder = []
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
 
 " vim-airline
 let nl = {'dos' : 'CRLF', 'unix' : 'LF', 'mac' : 'CR' }
 let g:airline_section_y = '%{(&fenc!=""?&fenc:&enc)}[%{nl[&ff]}]'
 
-" vim-json
-let g:vim_json_syntax_conceal = 0
-
 " vim-airline-themes
-let g:airline_theme = 'solarized'
-let g:airline_solarized_bg = 'dark'
+" let g:airline_theme = 'solarized'
+" let g:airline_solarized_bg = 'dark'

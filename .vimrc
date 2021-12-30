@@ -30,9 +30,9 @@ set shiftwidth=2
 set expandtab
 " No expand tab to space in Makefile.
 autocmd FileType make setlocal noexpandtab
-" Bckspace to delete indent, eol, characters left of curosr.
+" Backspace to delete indent, eol, characters left of curosr.
 set backspace=indent,eol,start
-" Wrap search
+" Wrap search.
 set wrapscan
 " Command line extended mode.
 set wildmenu
@@ -52,7 +52,7 @@ set history=10000
 set ttimeout
 " Time out length (ms).
 set ttimeoutlen=100
-" No incliment and decliment octal.
+" No increment and decrement octal.
 set nrformats-=octal
 " Shows tab, trailing whitespace, eol.
 set list
@@ -84,7 +84,7 @@ if has('win64')
   noremap <C-Space> <Esc>
   noremap! <C-Space> <Esc>
 else
-  " <C-Space> sends <Nul> in Unix terminal.
+  " Remaps <Nul> to <Esc> because <C-Space> sends <Nul> in Unix terminal.
   noremap <Nul> <Esc>
   noremap! <Nul> <Esc>
 endif
@@ -92,7 +92,7 @@ endif
 " gr to switch to the left tab.
 nnoremap gr gT
 
-" No register replace when pasting 
+" No replace register when pasting 
 function! RestoreRegister()
   let @" = s:restore_reg
   return ''

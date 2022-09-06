@@ -1,6 +1,6 @@
 # dotfiles
 
-My POSIX config files.
+My POSIX-compliant OS config files.
 
 ## Installation
 ```

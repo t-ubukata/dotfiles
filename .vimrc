@@ -90,7 +90,7 @@ noremap R "_R
 noremap cw "_cw
 
 " <C-Space> to Return to normal mode.
-if has('win64')
+if has('win32')
   noremap <C-Space> <Esc>
   noremap! <C-Space> <Esc>
 else

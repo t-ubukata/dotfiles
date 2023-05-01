@@ -79,6 +79,16 @@ set belloff=all
 " Key bindings.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Use the black hole register when using these change commands.
+noremap c "_c
+noremap cc "_cc
+noremap C "_C
+noremap s "_s
+noremap S "_S
+noremap r "_r
+noremap R "_R
+noremap cw "_cw
+
 " <C-Space> to Return to normal mode.
 if has('win64')
   noremap <C-Space> <Esc>

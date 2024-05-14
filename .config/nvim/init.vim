@@ -141,6 +141,10 @@ endfor
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-lsp
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+
 " gtags.vim
 " noremap <Space>h :Gtags -f %<CR>
 " noremap <Space>j :GtagsCursor<CR>
@@ -165,3 +169,11 @@ let g:airline_section_y = '%{(&fenc!=""?&fenc:&enc)}[%{nl[&ff]}]'
 " vim-airline-themes
 " let g:airline_theme = 'solarized'
 " let g:airline_solarized_bg = 'dark'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Project setting.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let s:project_setting = expand("./init.vim")
+if filereadable(s:project_setting)
+  source `=s:project_setting`
+endif

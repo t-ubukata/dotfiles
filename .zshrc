@@ -67,10 +67,6 @@ case "$OSTYPE" in
 darwin*)
   export LANG=en_US.UTF-8
   alias l='ls -ahlFG'
-  # For fzf-tmux
-  if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-    export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
-  fi
   # Source iff interactive 
   [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
   source "/usr/local/opt/fzf/shell/key-bindings.zsh"
@@ -81,13 +77,9 @@ linux*)
   alias l='ls -ahlF --color=auto'
   alias fd='fdfind'
   eval "$(dircolors -b)"
-  # For fzf-tmux
-  if [[ ! "$PATH" == *"$HOME"/project/dotfiles/.vim/pack/mypackage/start/fzf/bin* ]]; then
-    export PATH="${PATH:+${PATH}:}$HOME/.vim/pack/mypackage/start/fzf/bin"
-  fi
   # Source iff interactive 
-  [[ $- == *i* ]] && source "$HOME/.vim/pack/mypackage/start/fzf/shell/completion.zsh" 2> /dev/null
-  source "$HOME/.vim/pack/mypackage/start/fzf/shell/key-bindings.zsh"
+  [[ $- == *i* ]] && source "/usr/share/doc/fzf/examples/completion.zsh" 2> /dev/null
+  source "/usr/share/doc/fzf/examples/key-bindings.zsh"
   ;;
 esac
 

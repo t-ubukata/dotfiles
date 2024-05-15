@@ -128,6 +128,7 @@ Jetpack 'airblade/vim-gitgutter'
 Jetpack 'elzr/vim-jsona'
 Jetpack 'prabirshrestha/vim-lsp'
 Jetpack 'mattn/vim-lsp-settings'
+Jetpack 'dense-analysis/ale'
 
 call jetpack#end()
 
@@ -144,16 +145,8 @@ endfor
 " vim-lsp
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
-
-" gtags.vim
-" noremap <Space>h :Gtags -f %<CR>
-" noremap <Space>j :GtagsCursor<CR>
-" noremap <Space>n :cn<CR>
-" noremap <Space>p :cp<CR>
-
-" gen_tags.vim
-" let g:gen_tags#gtags_auto_gen = 1
-" let g:gen_tags#use_cache_dir = 0
+let g:lsp_diagnostics_enabled = 0
+noremap <Space>j :LspDefinition <CR>
 
 " NERDTree
 let NERDTreeShowHidden = 1

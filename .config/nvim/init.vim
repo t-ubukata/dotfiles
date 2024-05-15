@@ -166,7 +166,7 @@ let g:airline_section_y = '%{(&fenc!=""?&fenc:&enc)}[%{nl[&ff]}]'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Project setting.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let s:project_setting = expand("./init.vim")
+let s:project_setting = expand("./.private.vim")
 if filereadable(s:project_setting)
   source `=s:project_setting`
 endif

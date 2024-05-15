@@ -3,7 +3,6 @@ scriptencoding utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Screen settings.
 set number
 set ruler
@@ -78,7 +77,6 @@ set belloff=all
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Use the black hole register when using these change commands.
 noremap c "_c
 noremap cc "_cc
@@ -89,15 +87,9 @@ noremap r "_r
 noremap R "_R
 noremap cw "_cw
 
-" <C-Space> to Return to normal mode.
-if has('win32')
-  noremap <C-Space> <Esc>
-  noremap! <C-Space> <Esc>
-else
-  " Remaps <Nul> to <Esc> because <C-Space> sends <Nul> in Unix terminal.
-  noremap <Nul> <Esc>
-  noremap! <Nul> <Esc>
-endif
+" <C-j> to Return to normal mode.
+noremap <C-j> <Esc>
+noremap! <C-j> <Esc>
 
 " gr to switch to the left tab.
 nnoremap gr gT
@@ -116,16 +108,45 @@ vmap <silent> <expr> p <sid>Repl()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+if !filereadable(s:jetpackfile)
+  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
+endif
 
-" gtags.vim
-noremap <Space>h :Gtags -f %<CR>
-noremap <Space>j :GtagsCursor<CR>
-noremap <Space>n :cn<CR>
-noremap <Space>p :cp<CR>
+packadd vim-jetpack
+call jetpack#begin()
+Jetpack 'tani/vim-jetpack', {'opt': 1} "bootstrap
+Jetpack 'junegunn/fzf', { 'do': {-> fzf#install()} }
+Jetpack 'junegunn/fzf.vim'
+Jetpack 'preservim/nerdtree'
+Jetpack 'tomtom/tcomment_vim'
+Jetpack 'vim-airline/vim-airline'
+Jetpack 'ConradIrwin/vim-bracketed-paste'
+Jetpack 't-ubukata/vim-fswitch'
+Jetpack 'airblade/vim-gitgutter'
+Jetpack 'elzr/vim-jsona'
+Jetpack 'prabirshrestha/vim-lsp'
+Jetpack 'mattn/vim-lsp-settings'
+Jetpack 'dense-analysis/ale'
 
-" gen_tags.vim
-let g:gen_tags#gtags_auto_gen = 1
-let g:gen_tags#use_cache_dir = 0
+call jetpack#end()
+
+for name in jetpack#names()
+  if !jetpack#tap(name)
+    call jetpack#sync()
+    break
+  endif
+endfor
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin settings.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-lsp
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:lsp_diagnostics_enabled = 0
+noremap <Space>j :LspDefinition <CR>
 
 " NERDTree
 let NERDTreeShowHidden = 1
@@ -141,3 +162,11 @@ let g:airline_section_y = '%{(&fenc!=""?&fenc:&enc)}[%{nl[&ff]}]'
 " vim-airline-themes
 " let g:airline_theme = 'solarized'
 " let g:airline_solarized_bg = 'dark'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Project setting.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let s:project_setting = expand("./.private.vim")
+if filereadable(s:project_setting)
+  source `=s:project_setting`
+endif

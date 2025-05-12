@@ -20,11 +20,11 @@ set fileencodings=utf-8,cp932,sjis,iso-2022-jp,euc-jp
 " No compatible with vi.
 set nocompatible
 " Tab width.
-set tabstop=2
+set tabstop=4
 " Auto indent.
 set autoindent
 " Auto indent tab width.
-set shiftwidth=2
+set shiftwidth=4
 " Expands tab to space.
 set expandtab
 " No expand tab to space in Makefile.

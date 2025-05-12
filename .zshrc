@@ -49,6 +49,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 alias grep='grep --color=auto'
 alias gr='grep -RIn --color=auto'
+alias python='python3'
 alias py='python3'
 alias tm='tmux -2u'
 alias gs='git status'

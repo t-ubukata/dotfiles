@@ -1,6 +1,13 @@
 if [[ ! "$PATH" == *"$HOME"/.local/bin* ]]; then
   export PATH="$HOME/.local/bin${PATH:+:${PATH}}"
 fi
+
+FNM_PATH="/home/tomohiro_ubukata/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/tomohiro_ubukata/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
 export LESSCHARSET=utf-8
 export VISUAL=vi
 export EDITOR=vi
